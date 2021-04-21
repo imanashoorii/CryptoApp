@@ -4,9 +4,9 @@ import requests
 # Create your views here.
 
 def home_view(request):
-    data = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+    # data = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
-    url = requests.get(data).json()
+    # url = requests.get(data).json()
     # return HttpResponse(url)
-    context = {'data': url}
-    return render(request, 'crypto/main.html', context)
+    # context = {'data': url}
+    return render(request, 'crypto/main.html')
