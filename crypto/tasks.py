@@ -19,12 +19,12 @@ def get_coins_data():
         obj.name = coin['name']
         obj.image = coin['image']
 
-        if obj.price > coin['current_price']:
-            state = 'fall'
-        elif obj.price == coin['current_price']:
-            state = 'same'
-        elif obj.price < coin['current_price']:
-            state = 'raise'
+        # if obj.current_price > coin['current_price']:
+        #     state = 'fall'
+        # elif obj.current_price == coin['current_price']:
+        #     state = 'same'
+        # elif obj.current_price < coin['current_price']:
+        #     state = 'raise'
 
         obj.current_price = coin['current_price']
         obj.market_cap_rank = coin['market_cap_rank']
@@ -33,6 +33,6 @@ def get_coins_data():
         obj.save()
 
         new_data = model_to_dict(obj)
-        new_data.update({'state': state})
+        # new_data.update({'state': state})
 
         coins.append(new_data)
